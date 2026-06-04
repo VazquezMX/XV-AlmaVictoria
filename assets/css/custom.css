@@ -122,3 +122,176 @@
 
     color: #001f4d;
 }
+
+/* ===========================
+   ITINERARIO
+=========================== */
+
+.event-grid {
+
+    display: flex;
+
+    gap: 2rem;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+}
+
+.event-card {
+
+    width: 320px;
+
+    padding: 2rem;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.event-card h3 {
+
+    color: #001f4d;
+
+    margin-bottom: 1rem;
+}
+
+.event-hour {
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    color: #001f4d;
+
+     margin-bottom: 1rem;
+}
+
+.event-hour::after {
+
+    content: "";
+
+    display: block;
+
+    width: 50px;
+
+    height: 2px;
+
+    background: #001f4d;
+
+    margin: 0.75rem auto 0;
+}
+
+.event-icon {
+
+    font-size: 4rem;
+
+    color: #001f4d;
+
+    margin-bottom: 1.5rem;
+}
+
+/* ===========================
+   PRESENTACION
+=========================== */
+
+.presentation-text {
+
+    max-width: 700px;
+
+    margin: 0 auto 2rem;
+
+    font-size: 1.2rem;
+}
+
+.ampersand {
+
+    font-size: 3rem;
+
+    color: #001f4d;
+
+    margin: 1rem 0;
+}
+
+/* ===========================
+   DRESS CODE
+=========================== */
+
+.dress-colors {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 4rem;
+
+    margin-top: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.color-circle {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    margin: 0 auto 1rem;
+}
+
+.navy {
+
+    background: #001f4d;
+}
+
+.sky {
+
+    background: #7ec8e3;
+}
+
+/* ===========================
+   MESA DE REGALOS
+=========================== */
+
+.gift-grid {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+}
+
+.gift-card {
+
+    width: 300px;
+
+    padding: 2rem;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.gift-number {
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+    color: #001f4d;
+
+    margin: 1.5rem 0;
+}
