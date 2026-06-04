@@ -1,0 +1,124 @@
+/* ===========================
+   ALMA VICTORIA XV
+=========================== */
+
+.banner.style1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner.style1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 18, 50, 0.60),
+            rgba(0, 18, 50, 0.60)
+        );
+
+    z-index: 1;
+}
+
+.banner .image img {
+    object-fit: cover;
+}
+
+.banner .content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner .image {
+    position: relative;
+    z-index: 2;
+}
+
+.banner .content h1 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: white;
+
+    font-size: 6rem;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    margin-bottom: .5rem;
+}
+
+.banner .content .major {
+
+    color: white;
+
+    font-size: 1.8rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.banner .content p {
+
+    color: #f4f4f4;
+}
+
+/* ===========================
+   COUNTDOWN
+=========================== */
+
+#countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+}
+
+.time-box {
+
+    min-width: 120px;
+
+    padding: 1rem;
+
+    border: 1px solid rgba(0, 31, 63, .2);
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+.time-box span {
+
+    display: block;
+
+    font-size: 3rem;
+
+    font-weight: bold;
+
+    color: #001f4d;
+}
+
+.time-box p {
+
+    margin: 0;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.countdown-message {
+
+    margin-top: 2rem;
+
+    color: #001f4d;
+}
