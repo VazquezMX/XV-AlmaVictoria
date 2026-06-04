@@ -295,3 +295,46 @@
 
     margin: 1.5rem 0;
 }
+
+/* ===========================
+   RSVP
+=========================== */
+
+.rsvp-grid {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 2rem;
+}
+
+.rsvp-card {
+
+    width: 320px;
+
+    padding: 2rem;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   HASHTAG
+=========================== */
+
+.hashtag {
+
+    color: #001f4d;
+
+    font-size: 3rem;
+
+    margin-top: 1rem;
+}
