@@ -14,16 +14,28 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script:wght@400;500;600&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+		<button id="menuToggle">
+		☰			
+		</button>
+
+		<nav id="floatingMenu">
+				<a href="#inicio">Inicio</a>
+				<a href="#itinerario">Itinerario</a>
+				<a href="#vestimenta">Vestimenta</a>
+				<a href="#regalos">Regalos</a>
+				<a href="#confirmar">Confirmar</a>
+			</nav>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 
 				<!-- Portada -->
-					<section class="banner style1 orient-right content-align-center image-position-center fullscreen onload-image-fade-in onload-content-fade-right">
+					<section id="inicio" class="banner style1 orient-right content-align-center image-position-center fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
 							<h1>Alma Victoria</h1>
 							<p class="major">
@@ -59,11 +71,7 @@
 								<div class="time-box">
 									<span id="minutes">0</span>
 									<p>Minutos</p>
-								</div>
-								<div class="time-box">
-									<span id="seconds">0</span>
-									<p>Segundos</p>
-								</div>
+								</div>								
 							</div>
 							<p class="countdown-message">
 								Para celebrar los XV años de Alma Victoria
@@ -75,8 +83,7 @@
 				<section class="wrapper style1 align-center">
 					<div class="inner">
 						<p class="presentation-text">
-							Con la bendición de Dios y el amor de mis padres,
-							me siento muy feliz de llegar a este momento de mi vida.
+							Mis Padres:
 						</p>
 						<h2>Alma Silvestre Mirón Orozco</h2>
 						<p class="ampersand">&</p>
@@ -89,7 +96,7 @@
 				</section> 
 
 				<!-- ITINERARIO -->
-				 <section class="wrapper style1 align-center">
+				 <section id="itinerario" class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Itinerario</h2>
 						<div class="event-grid">
@@ -138,7 +145,7 @@
 					<div class="content">
 						<h2>Misa</h2>
 						<p>
-							Te esperamos para agradecer a Dios este momento tan especial.
+							Agradezco a Dios por mis XV años.
 						</p>
 						<p>
 							<strong>Hora:</strong> 5:00 PM
@@ -149,7 +156,7 @@
 						</p>
 						<p>
 							Av. Cordillera Arakán 601<br>
-							Col. Lomas 3ra Sección<br>
+							Col. Lomas 4ta Sección<br>
 							San Luis Potosí, S.L.P.
 						</p>
 						<ul class="actions">
@@ -177,7 +184,7 @@
 							Celebremos juntos una noche inolvidable.
 						</p>
 						<p>
-							<strong>Hora:</strong> 7:00 PM
+							<strong>Hora:</strong> De 7:00 PM a 1 AM
 						</p>
 						<p>
 							<strong>Lugar:</strong><br>
@@ -205,34 +212,34 @@
 				</section>
 
 				<!--Hoteles-->
-				<section class="wrapper style1 align-center">
+				<section id="hoteles" class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Hospedaje</h2>
 						<p>
-							Hemos reservado tarifas especiales para nuestros invitados.
+							Hemos gestionado tarifas preferenciales para nuestros invitados.
 						</p>
 						<div class="hotel-grid">
 							<div class="hotel-card">
-								<h3>Hotel 1</h3>
+								<h3>Real Inn San Luis Potosí</h3>
 								<p>Clave de convenio</p>
 								<div class="hotel-code">
-									XVALMA2026
+									IND XV Alma
 								</div>
 							</div>
 							<div class="hotel-card">
-								<h3>Hotel 2</h3>
+								<h3>City Express Plus San Luis Potosí</h3>
 								<p>Clave de convenio</p>
 								<div class="hotel-code">
-									XV2026
+									Pendiente
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				
+
 				<!-- CODIGO VESTIMENTA-->
-				<section class="wrapper style1 align-center">
+				<section id="vestimenta" class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Código de Vestimenta</h2>
 						<p>
@@ -256,7 +263,7 @@
 				</section>
 
 				<!--MESAS REGALO-->
-				<section class="wrapper style1 align-center">
+				<section id="regalos" class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Mesa de Regalos</h2>
 						<p>
@@ -292,7 +299,7 @@
 				</section>
 
 				<!--RSVP-->
-				<section class="wrapper style1 align-center">
+				<section id="confirmar" class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Confirmación de Asistencia</h2>
 						<p>
@@ -674,14 +681,9 @@
 						(distance % (1000 * 60 * 60))
 						/ (1000 * 60)
 					);
-					const seconds = Math.floor(
-						(distance % (1000 * 60))
-						/ 1000
-					);
 					document.getElementById("days").textContent = days;
 					document.getElementById("hours").textContent = hours;
-					document.getElementById("minutes").textContent = minutes;
-					document.getElementById("seconds").textContent = seconds;
+					document.getElementById("minutes").textContent = minutes;					
 				}
 				updateCountdown();
 				setInterval(updateCountdown, 1000);
@@ -690,6 +692,17 @@
 					navigator.clipboard.writeText(number);
 					alert("Número copiado: " + number);
 				}
+
+				// Toggle menú móvil
+				const menuToggle = document.getElementById("menuToggle");
+				const floatingMenu = document.getElementById("floatingMenu");
+				menuToggle.addEventListener("click", () => {
+					if (floatingMenu.style.display === "flex") {
+						floatingMenu.style.display = "none";
+					} else {
+						floatingMenu.style.display = "flex";
+					}
+				});
 
 			</script>
 
