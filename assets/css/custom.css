@@ -1,5 +1,5 @@
 /* ===========================
-   ALMA VICTORIA XV
+ALMA VICTORIA XV
 =========================== */
 
 .banner.style1 {
@@ -12,11 +12,10 @@
     position: absolute;
     inset: 0;
 
-    background:
-        linear-gradient(
-            rgba(0, 18, 50, 0.60),
-            rgba(0, 18, 50, 0.60)
-        );
+    background: linear-gradient(
+        rgba(0, 18, 50, 0.60),
+        rgba(0, 18, 50, 0.60)
+    );
 
     z-index: 1;
 }
@@ -25,316 +24,246 @@
     object-fit: cover;
 }
 
-.banner .content {
-    position: relative;
-    z-index: 2;
-}
-
+.banner .content,
 .banner .image {
     position: relative;
     z-index: 2;
 }
 
 .banner .content h1 {
-
     font-family: 'Cormorant Garamond', serif;
-
     color: white;
-
     font-size: 6rem;
-
     font-weight: 400;
-
     letter-spacing: 2px;
-
     margin-bottom: .5rem;
 }
 
 .banner .content .major {
-
     color: white;
-
     font-size: 1.8rem;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
 }
 
 .banner .content p {
-
     color: #f4f4f4;
 }
 
 /* ===========================
-   COUNTDOWN
+SHARED GRIDS
+=========================== */
+
+.event-grid,
+.gift-grid,
+.hotel-grid,
+.rsvp-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* ===========================
+SHARED CARDS
+=========================== */
+
+.event-card,
+.gift-card,
+.hotel-card,
+.rsvp-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    transition: all .3s ease;
+}
+
+.event-card:hover,
+.gift-card:hover,
+.hotel-card:hover,
+.rsvp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+/* ===========================
+COUNTDOWN
 =========================== */
 
 #countdown {
-
     display: flex;
-
     justify-content: center;
-
     gap: 2rem;
-
     flex-wrap: wrap;
-
     margin-top: 2rem;
 }
 
 .time-box {
-
-    min-width: 120px;
-
+    flex: 1;
+    min-width: 80px;
+    max-width: 140px;
     padding: 1rem;
-
     border: 1px solid rgba(0, 31, 63, .2);
-
     border-radius: 12px;
-
     background: white;
 }
 
 .time-box span {
-
     display: block;
-
     font-size: 3rem;
-
     font-weight: bold;
-
     color: #001f4d;
 }
 
 .time-box p {
-
     margin: 0;
-
     text-transform: uppercase;
-
     letter-spacing: 2px;
 }
 
 .countdown-message {
-
     margin-top: 2rem;
-
     color: #001f4d;
 }
 
 /* ===========================
-   ITINERARIO
-=========================== */
-
-.event-grid {
-
-    display: flex;
-
-    gap: 2rem;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    margin-top: 2rem;
-}
-
-.event-card {
-
-    width: 320px;
-
-    padding: 2rem;
-
-    border-radius: 12px;
-
-    background: white;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-}
-
-.event-card h3 {
-
-    color: #001f4d;
-
-    margin-bottom: 1rem;
-}
-
-.event-hour {
-
-    font-size: 2rem;
-
-    font-weight: bold;
-
-    color: #001f4d;
-
-     margin-bottom: 1rem;
-}
-
-.event-hour::after {
-
-    content: "";
-
-    display: block;
-
-    width: 50px;
-
-    height: 2px;
-
-    background: #001f4d;
-
-    margin: 0.75rem auto 0;
-}
-
-.event-icon {
-
-    font-size: 4rem;
-
-    color: #001f4d;
-
-    margin-bottom: 1.5rem;
-}
-
-/* ===========================
-   PRESENTACION
+PRESENTACION
 =========================== */
 
 .presentation-text {
-
     max-width: 700px;
-
     margin: 0 auto 2rem;
-
     font-size: 1.2rem;
 }
 
 .ampersand {
-
     font-size: 3rem;
-
     color: #001f4d;
-
     margin: 1rem 0;
 }
 
 /* ===========================
-   DRESS CODE
+ITINERARIO
 =========================== */
+.event-card {
+    flex: 1;
+    min-width: 140px;
+    max-width: 260px;
+    padding: 1.5rem;
+}
 
+.event-card h3 {
+    color: #001f4d;
+    margin-bottom: 1rem;
+}
+
+.event-hour {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #001f4d;
+    margin-bottom: 1rem;
+}
+
+.event-hour::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #001f4d;
+    margin: 0.75rem auto 0;
+}
+
+.event-icon {
+    font-size: 4rem;
+    color: #001f4d;
+    margin-bottom: 1.5rem;
+}
+
+/* ===========================
+DRESS CODE
+=========================== */
 .dress-colors {
-
     display: flex;
-
     justify-content: center;
-
     gap: 4rem;
-
     margin-top: 2rem;
-
     flex-wrap: wrap;
 }
 
 .color-circle {
-
     width: 80px;
-
     height: 80px;
-
     border-radius: 50%;
-
     margin: 0 auto 1rem;
 }
 
 .navy {
-
     background: #001f4d;
 }
 
 .sky {
-
     background: #7ec8e3;
 }
 
 /* ===========================
-   MESA DE REGALOS
+MESA DE REGALOS
 =========================== */
-
-.gift-grid {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 2rem;
-
-    flex-wrap: wrap;
-
-    margin-top: 2rem;
-}
-
 .gift-card {
-
-    width: 300px;
-
+    flex: 1;
+    min-width: 140px;
+    max-width: 260px;
     padding: 2rem;
-
-    background: white;
-
-    border-radius: 12px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
 .gift-number {
-
     font-size: 2rem;
-
     font-weight: bold;
-
     color: #001f4d;
-
     margin: 1.5rem 0;
 }
 
 /* ===========================
-   RSVP
+RSVP
 =========================== */
-
-.rsvp-grid {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 2rem;
-
-    flex-wrap: wrap;
-
-    margin-top: 2rem;
-}
-
 .rsvp-card {
-
     width: 320px;
-
     padding: 2rem;
-
-    background: white;
-
-    border-radius: 12px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
 /* ===========================
-   HASHTAG
+HASHTAG
 =========================== */
-
 .hashtag {
-
     color: #001f4d;
-
     font-size: 3rem;
-
     margin-top: 1rem;
+}
+
+/* ===========================
+MOBILE
+=========================== */
+@media screen and (max-width: 736px) {
+.event-grid {
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+.gift-grid {
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+.banner .content h1 {
+    font-size: 4rem;
+}
+
+.banner .content .major {
+    font-size: 1.3rem;
+}
+
+.event-icon {
+    font-size: 3rem;
+}
+
 }
