@@ -56,6 +56,25 @@ html {
 /* ===========================
 SHARED GRIDS
 =========================== */
+.wrapper
+.inner h2 {
+    font-family: 'Pinyon Script', cursive;
+    color: black;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: .5rem;
+}
+
+.wrapper
+.inner h3 {
+    font-family: 'Pinyon Script', cursive;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+}
 
 .event-grid,
 .gift-grid,
@@ -141,7 +160,7 @@ PRESENTACION
 }
 
 .ampersand {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #001f4d;
     margin: 1rem 0;
 }
@@ -317,4 +336,20 @@ MOBILE
 
 #floatingMenu a:hover {
     background: #f5f5f5;
+}
+
+
+/* ===========================
+   HOTELES
+=========================== */
+.hotel-code {
+    display: inline-block;
+    margin-top: 0rem;
+    padding: 0.5rem 1rem;
+    background: #f5f7fa;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #001f4d;
+    letter-spacing: 1px;
 }
