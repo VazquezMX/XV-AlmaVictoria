@@ -253,6 +253,16 @@ RSVP
     padding: 2rem;
 }
 
+.wrapper .inner .rsvp-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+}
+
+
 /* ===========================
 HASHTAG
 =========================== */
@@ -299,15 +309,23 @@ MOBILE
     right: 20px;
     width: 55px;
     height: 55px;
-    border-radius: 50%;
+    padding: 0;
     border: none;
+    border-radius: 50%;
     background: rgba(0, 31, 77, 0.85);
     backdrop-filter: blur(10px);
     color: white;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 9999;
     box-shadow: 0 4px 15px rgba(0,0,0,.25);
+}
+
+#menuToggle i {
+
+    font-size: 1.4rem;
 }
 
 #floatingMenu {
