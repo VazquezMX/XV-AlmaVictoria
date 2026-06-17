@@ -213,6 +213,12 @@ ITINERARIO
     min-width: 140px;
     max-width: 260px;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content{
+    flex-grow: 1;    
 }
 
 .event-card h3 {
@@ -315,12 +321,24 @@ HASHTAG
 }
 
 /* ===========================
+   SECTION TITLES
+=========================== */
+
+.section-title {
+    font-size: 6rem;
+}
+
+/* ===========================
 MOBILE
 =========================== */
 @media screen and (max-width: 736px) {
 .event-grid {
     flex-wrap: nowrap;
     gap: 1rem;
+}
+
+.section-title {
+    font-size: 3rem;
 }
 
 .gift-grid {
