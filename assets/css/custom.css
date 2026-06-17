@@ -92,7 +92,6 @@ SHARED CARDS
 =========================== */
 
 .event-card,
-.gift-card,
 .hotel-card,
 .rsvp-card {
     background: white;
@@ -108,6 +107,47 @@ SHARED CARDS
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
+
+/* ===========================
+   MESA DE REGALOS
+=========================== */
+
+.gift-card {
+    width: 320px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.gift-card h3 {
+    margin-bottom: 1.5rem;
+}
+
+.gift-number {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background: #f5f7fa;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #001f4d;
+    letter-spacing: 2px;
+}
+
+.gift-logo {
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.liverpool-logo {
+    height: 60px;
+    width: auto;
+}
+
+.sears-logo {
+    height: 60px;
+    width: auto;
+}
+
 
 /* ===========================
 COUNTDOWN
@@ -232,17 +272,19 @@ DRESS CODE
 MESA DE REGALOS
 =========================== */
 .gift-card {
-    flex: 1;
-    min-width: 140px;
-    max-width: 260px;
+    width: 320px;
     padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gift-number {
     font-size: 2rem;
     font-weight: bold;
     color: #001f4d;
-    margin: 1.5rem 0;
+    margin: 1rem 0 1.5rem 0;
 }
 
 /* ===========================
@@ -282,7 +324,7 @@ MOBILE
 }
 
 .gift-grid {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
