@@ -212,7 +212,7 @@ ITINERARIO
     flex: 1;
     min-width: 140px;
     max-width: 260px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
 }
@@ -224,6 +224,10 @@ ITINERARIO
 .event-card h3 {
     color: #001f4d;
     margin-bottom: 1rem;
+}
+
+.event-card .button{
+    margin-top: 1rem;
 }
 
 .event-hour {
@@ -243,7 +247,7 @@ ITINERARIO
 }
 
 .event-icon {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #001f4d;
     margin-bottom: 1.5rem;
 }
