@@ -70,7 +70,7 @@ SHARED GRIDS
 .inner h3 {
     font-family: 'Pinyon Script', cursive;
     color: black;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: .5rem;
@@ -96,7 +96,7 @@ SHARED CARDS
 .hotel-card,
 .rsvp-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,.08);
     transition: all .3s ease;
 }
