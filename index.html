@@ -314,32 +314,41 @@
 				<section id="confirmar" class="wrapper style1 align-center">
 					<div class="inner">
 						<h2 class="section-title">Confirmación de Asistencia</h2>
-						<p>
-							Agradecemos confirmar tu asistencia antes del
-							<strong>15 de octubre de 2026</strong>.
-						</p>
-						<div class="rsvp-grid">
-							<div class="rsvp-card">
-								<h3>Alma Mirón</h3>
-								<p>811-786-7110</p>
-								<a
-									class="button primary"
-									href="https://wa.me/528117867110?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20años%20de%20Alma%20Victoria"
-									target="_blank">
-									Confirmar por WhatsApp
-								</a>
+
+						<div id="rsvp-loading">
+							<p>Cargando invitación...</p>
+						</div>
+
+						<div id="rsvp-invalid" style="display: none;">
+							<p>
+								No pudimos validar esta invitación.
+								Por favor contacta a Alma o a César.
+							</p>
+						</div>
+
+						<div id="rsvp-form" style="display: none;">
+							<h3 id="rsvp-family"></h3>
+							<p>
+								Por favor confirma cuántas personas asistirán a la fiesta
+							</p>
+							<div class="rsvp-counter">
+								<p>Adultos</p>
+								<button type="button" onclick="changeGuests('adultos', -1)">-</button>
+								<span id="adultos-count">0</span>
+								<button type="button" onclick="changeGuests('adultos', 1)">+</button>
 							</div>
 
-							<div class="rsvp-card">
-								<h3>César Vázquez</h3>
-								<p>444-188-9148</p>
-								<a
-									class="button primary"
-									href="https://wa.me/524441889148?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20años%20de%20Alma%20Victoria"
-									target="_blank">
-									Confirmar por WhatsApp
-								</a>
+							<div class="rsvp-counter">
+								<p>Niños</p>
+								<button type="button" onclick="changeGuests('ninos', -1)">-</button>
+								<span id="ninos-count">0</span>
+								<button type="button" onclick="changeGuests('ninos', 1)">+</button>
 							</div>
+
+							<button class="button primary" onclick="submitRSVP()">
+								Confirmar asistencia
+							</button>
+							<p id="rsvp-message"></p>
 						</div>
 					</div>
 				</section>
@@ -420,6 +429,12 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+				const RSVP_API_URL = "https://script.google.com/macros/s/AKfycbxZEMNeDv3WrOzKecs32yLeECBjmfgeb7Fc7AMxhi0-L0H7d7iRdHb3EB3ey6fx2ts2-g/exec";
+				let currentToken = null;
+				let maxAdultos = 0;
+				let maxNinos = 0;
+				let adultos = 0;
+				let ninos = 0;
 				const eventDate = new Date("Nov 7, 2026 17:00:00").getTime();
 				function updateCountdown() {
 					const now = new Date().getTime();
@@ -445,6 +460,108 @@
 					alert("Número copiado: " + number);
 				}
 
+				//RSVP functions
+				function getTokenFromUrl() {
+					const params = new URLSearchParams(window.location.search);
+					return params.get("i");
+				}
+
+				async function loadInvite() {
+					currentToken = getTokenFromUrl();
+
+					const loading = document.getElementById("rsvp-loading");
+					const invalid = document.getElementById("rsvp-invalid");
+					const form = document.getElementById("rsvp-form");
+
+					if (!currentToken) {
+						loading.style.display = "none";
+						invalid.style.display = "block";
+						return;
+					}
+
+					try {
+						const response = await fetch(
+							RSVP_API_URL + "?action=getInvite&token=" + encodeURIComponent(currentToken)
+						);
+
+						const data = await response.json();
+
+						loading.style.display = "none";
+
+						if (!data.ok) {
+							invalid.style.display = "block";
+							return;
+						}
+
+						maxAdultos = Number(data.maxAdultos);
+						maxNinos = Number(data.maxNinos);
+
+						adultos = Number(data.adultosConfirmados) || 0;
+						ninos = Number(data.ninosConfirmados) || 0;
+
+						document.getElementById("rsvp-family").textContent = data.familia;
+
+						updateGuestDisplay();
+
+						form.style.display = "block";
+
+					} catch (error) {
+						loading.style.display = "none";
+						invalid.style.display = "block";
+					}
+				}
+
+				function changeGuests(type, amount) {
+					if (type === "adultos") {
+						adultos = adultos + amount;
+
+						if (adultos < 0) adultos = 0;
+						if (adultos > maxAdultos) adultos = maxAdultos;
+					}
+
+					if (type === "ninos") {
+						ninos = ninos + amount;
+
+						if (ninos < 0) ninos = 0;
+						if (ninos > maxNinos) ninos = maxNinos;
+					}
+
+					updateGuestDisplay();
+				}
+
+				function updateGuestDisplay() {
+					document.getElementById("adultos-count").textContent = adultos;
+					document.getElementById("ninos-count").textContent = ninos;
+				}
+
+				async function submitRSVP() {
+					const message = document.getElementById("rsvp-message");
+
+					message.textContent = "Guardando confirmación...";
+
+					try {
+						const response = await fetch(RSVP_API_URL, {
+							method: "POST",
+							body: JSON.stringify({
+								token: currentToken,
+								adultos: adultos,
+								ninos: ninos
+							})
+						});
+
+						const data = await response.json();
+
+						if (data.ok) {
+							message.textContent = "¡Gracias! Tu asistencia fue confirmada.";
+						} else {
+							message.textContent = data.message || "No pudimos guardar la confirmación.";
+						}
+
+					} catch (error) {
+						message.textContent = "Ocurrió un error. Intenta nuevamente.";
+					}
+				}
+
 				// Toggle menú móvil
 				const menuToggle = document.getElementById("menuToggle");
 				const floatingMenu = document.getElementById("floatingMenu");
@@ -456,7 +573,13 @@
 					}
 				});
 
+				//Call invite function
+				loadInvite();
 			</script>
 
 	</body>
 </html>
+
+<!--
+https://script.google.com/macros/s/AKfycbxZEMNeDv3WrOzKecs32yLeECBjmfgeb7Fc7AMxhi0-L0H7d7iRdHb3EB3ey6fx2ts2-g/exec
+-->

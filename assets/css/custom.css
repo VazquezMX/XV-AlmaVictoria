@@ -327,6 +327,48 @@ RSVP
     margin-bottom: .5rem;
 }
 
+/* ===========================
+   RSVP FORM
+=========================== */
+.rsvp-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.rsvp-counter p {
+    width: 80px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.rsvp-counter button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background: #001f4d;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.rsvp-counter span {
+    min-width: 40px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #001f4d;
+}
+
+#rsvp-message {
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
 
 /* ===========================
 HASHTAG
