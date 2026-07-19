@@ -230,6 +230,15 @@
 								<div class="hotel-code">
 									IND XV Alma
 								</div>
+								 <button
+									type="button"
+									class="button small hotel-details-button"
+									onclick="openHotelModal(
+										'Real Inn San Luis Potosí',
+										'images/hoteles/real_inn_tarifas.png'
+									)">
+									Ver tarifas
+								</button>
 							</div>
 							<div class="hotel-card">
 								<h4 class="hotel-name">City Express Plus SLP</h4>
@@ -237,10 +246,46 @@
 								<div class="hotel-code">
 									XV Alma Vázquez
 								</div>
+								 <button
+									type="button"
+									class="button small hotel-details-button"
+									onclick="openHotelModal(
+										'City Express Plus SLP',
+										'images/hoteles/city_express_tarifas.png'
+									)">
+									Ver tarifas
+								</button>
 							</div>
 						</div>
 					</div>
 				</section>
+
+				<!-- MODAL TARIFAS DE HOTELES -->
+				<div
+					id="hotelModal"
+					class="hotel-modal"
+					role="dialog"
+					aria-modal="true"
+					aria-labelledby="hotelModalTitle"
+					aria-hidden="true">
+					<div class="hotel-modal-backdrop" onclick="closeHotelModal()"></div>
+					<div class="hotel-modal-content">
+						<button
+							type="button"
+							class="hotel-modal-close"
+							aria-label="Cerrar tarifas"
+							onclick="closeHotelModal()">
+							&times;
+						</button>
+						<h3 id="hotelModalTitle"></h3>
+						<div class="hotel-modal-image-container">
+							<img
+								id="hotelModalImage"
+								src=""
+								alt="">
+						</div>
+					</div>
+				</div>
 
 
 				<!-- CODIGO VESTIMENTA-->
@@ -562,6 +607,42 @@
 						message.textContent = "Ocurrió un error. Intenta nuevamente.";
 					}
 				}
+
+				//modal
+				function openHotelModal(hotelName, imagePath) {
+				const modal = document.getElementById("hotelModal");
+				const title = document.getElementById("hotelModalTitle");
+				const image = document.getElementById("hotelModalImage");
+
+				title.textContent = hotelName;
+				image.src = imagePath;
+				image.alt = "Tarifas y beneficios de " + hotelName;
+
+				modal.classList.add("is-open");
+				modal.setAttribute("aria-hidden", "false");
+				document.body.classList.add("modal-open");
+				}
+
+				function closeHotelModal() {
+					const modal = document.getElementById("hotelModal");
+					const image = document.getElementById("hotelModalImage");
+
+					modal.classList.remove("is-open");
+					modal.setAttribute("aria-hidden", "true");
+					document.body.classList.remove("modal-open");
+
+					image.src = "";
+				}
+
+				document.addEventListener("keydown", function(event) {
+					const modal = document.getElementById("hotelModal");
+					if (
+						event.key === "Escape" &&
+						modal.classList.contains("is-open")
+					) {
+						closeHotelModal();
+					}
+				});
 
 				// Toggle menú móvil
 				const menuToggle = document.getElementById("menuToggle");
